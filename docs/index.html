@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The LLM Frontier: Exploring Large Language Models</title>
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Roboto font and smooth scrolling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Style for active navigation link */
+        .nav-link.active {
+            font-weight: 500; /* Medium weight for active */
+            color: #2563eb; /* Tailwind blue-600 for active link */
+            border-bottom: 2px solid #2563eb; /* Underline for active */
+            padding-bottom: 4px; /* Space for underline */
+        }
+        /* Adjust padding for non-active links to align with active */
+        .nav-link:not(.active) {
+            padding-bottom: 6px; /* 2px border + 4px padding-bottom = 6px total */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header and Navigation -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-900 rounded-lg p-2 hover:bg-gray-100 transition-colors">
+                The LLM Frontier
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Home</a></li>
+                <li><a href="#what-are-llms" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">What are LLMs?</a></li>
+                <li><a href="#model-architectures" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Model Architectures</a></li>
+                <li><a href="#compare-models" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Compare Models</a></li> <!-- New Nav Link -->
+                <li><a href="#applications" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Applications</a></li>
+                <li><a href="#advancements" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Recent Advancements</a></li>
+                <li><a href="#resources" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Resources</a></li>
+                <li><a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 transition-colors rounded-lg p-2">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section - Simplified to match image aesthetic -->
+        <section id="home" class="bg-white py-20 text-center rounded-b-lg shadow-sm">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl font-extrabold mb-4 text-gray-900">A Deep Dive into Large Language Models</h2>
+                <p class="text-xl font-light text-gray-700 max-w-3xl mx-auto">An interactive exploration of the concepts, techniques, and applications behind one of AI's most transformative technologies.</p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- What are LLMs? Section -->
+        <section id="what-are-llms" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">What are Large Language Models (LLMs)?</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg leading-relaxed text-lg border border-gray-200">
+                <p class="mb-4">Large Language Models (LLMs) are a class of artificial intelligence models trained on vast amounts of text data to understand, generate, and process human language. They are built upon the transformer architecture, which allows them to learn complex patterns and relationships within language, enabling them to perform a wide range of natural language processing (NLP) tasks.</p>
+                <p class="mb-4">At their core, LLMs operate by predicting the next word in a sequence based on the preceding words. This seemingly simple task, when scaled to billions or even trillions of parameters and trained on massive datasets, gives rise to emergent capabilities like sophisticated reasoning, creative writing, code generation, summarization, and translation.</p>
+                <p>The development of LLMs has rapidly accelerated in recent years, leading to models that can engage in coherent conversations, answer complex questions, and even assist in scientific research. They represent a significant leap forward in AI, pushing the boundaries of what machines can achieve in understanding and interacting with the human world.</p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- Model Architecture and Key Features Section -->
+        <section id="model-architectures" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Model Architecture and Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Llama 3 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Llama 3 (Meta AI)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> 1B, 8B, 70B parameters, with 3.1 introducing 405B.</li>
+                        <li><strong>Architecture:</strong> Decoder-only transformer, optimized with Grouped Query Attention (GQA).</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> New 128,256-token vocabulary (up from 32,000 in Llama 2).</li>
+                        <li><strong>Training Data:</strong> Over 15 trillion tokens, 30+ languages, increased code data.</li>
+                        <li><strong>Context Length:</strong> 8,192 tokens (8B/70B), up to 128,000 tokens (3.1 models).</li>
+                        <li><strong>Fine-Tuning:</strong> Instruction-tuned with SFT and RLHF for dialogue and safety.</li>
+                    </ul>
+                </div>
+
+                <!-- GPT-4 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">GPT-4 (OpenAI)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> Estimated 1.75 trillion parameters (exact size undisclosed).</li>
+                        <li><strong>Architecture:</strong> Multimodal transformer, accepts image and text inputs.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Not detailed, robust across 26 languages.</li>
+                        <li><strong>Training Data:</strong> Vast and diverse dataset, including text and image.</li>
+                        <li><strong>Context Length:</strong> Up to 32,000 tokens (approx. 25,000 words).</li>
+                        <li><strong>Fine-Tuning:</strong> Pre-trained with conversational styles, "steerability" feature.</li>
+                    </ul>
+                </div>
+
+                <!-- Claude 3 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Claude 3 (Anthropic)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> Opus, Sonnet, Haiku (specific counts not public).</li>
+                        <li><strong>Architecture:</strong> Sparse transformer with reversible layers, multimodal.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Proprietary; exact details not public.</li>
+                        <li><strong>Training Data:</strong> Proprietary mix, unsupervised learning, RLHF, Constitutional AI.</li>
+                        <li><strong>Context Length:</strong> 200,000 tokens (up to 1 million for specific use cases).</li>
+                        <li><strong>Fine-Tuning:</strong> Curriculum learning, contrastive learning, controllable generation.</li>
+                    </ul>
+                </div>
+
+                <!-- Gemini 1.5 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Gemini 1.5 (Google DeepMind)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> Pro (implied trillions of parameters).</li>
+                        <li><strong>Architecture:</strong> Sparse Mixture-of-Experts (MoE) multimodal.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Processes text, image, video, audio, code as tokens.</li>
+                        <li><strong>Training Data:</strong> Vast and diverse proprietary dataset.</li>
+                        <li><strong>Context Length:</strong> Up to 1M tokens (production), 10M (research).</li>
+                        <li><strong>Fine-Tuning:</strong> Sparsity for training efficiency, in-context memorization.</li>
+                    </ul>
+                </div>
+
+                <!-- Mistral Large Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Mistral Large (Mistral AI)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> Large model (exact count not officially disclosed).</li>
+                        <li><strong>Architecture:</strong> Transformer with Sliding Window Attention (SWA) and Rolling Buffer Cache.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Optimized for native multilingual proficiency.</li>
+                        <li><strong>Training Data:</strong> Trained for complex multilingual reasoning.</li>
+                        <li><strong>Context Length:</strong> 32,000 tokens.</li>
+                        <li><strong>Fine-Tuning:</strong> Retrieval Augmented Generation (RAG), instruction-following, function-calling.</li>
+                    </ul>
+                </div>
+
+                <!-- Falcon 180B Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Falcon 180B (Technology Innovation Institute - TII)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> 180 billion parameters.</li>
+                        <li><strong>Architecture:</strong> Causal decoder-only transformer, optimized for multiquery attention.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Not detailed.</li>
+                        <li><strong>Training Data:</strong> 3.5 trillion tokens (RefinedWeb + curated corpora).</li>
+                        <li><strong>Context Length:</strong> Designed for large-scale language understanding.</li>
+                        <li><strong>Fine-Tuning:</strong> General-purpose model, fine-tunable for specific tasks.</li>
+                    </ul>
+                </div>
+
+                <!-- Cohere Command R+ Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Cohere Command R+ (Cohere)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> 104 billion parameters.</li>
+                        <li><strong>Architecture:</strong> Auto-regressive transformer.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Optimized for 10 key languages.</li>
+                        <li><strong>Training Data:</strong> Enterprise-focused for RAG and tool use.</li>
+                        <li><strong>Context Length:</strong> 128,000 tokens.</li>
+                        <li><strong>Fine-Tuning:</strong> SFT & preference training, tool use, grounded generation (RAG).</li>
+                    </ul>
+                </div>
+
+                <!-- Grok-1 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Grok-1 (xAI)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> 314 billion parameters (Mixture-of-Experts).</li>
+                        <li><strong>Architecture:</strong> Mixture-of-Experts (MoE) transformer.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Not detailed.</li>
+                        <li><strong>Training Data:</strong> Internet data + real-time X (Twitter) information.</li>
+                        <li><strong>Context Length:</strong> Handles complex context.</li>
+                        <li><strong>Fine-Tuning:</strong> Leverages Zero-Shot, Few-Shot, Chain-of-Thought prompting.</li>
+                    </ul>
+                </div>
+
+                <!-- Qwen2 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Qwen2 (Alibaba Cloud)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> 0.5B, 1.5B, 7B, 57B (MoE), 72B parameters.</li>
+                        <li><strong>Architecture:</strong> Transformer with GQA, RoPE, sliding window/full attention, YARN.</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Adaptive for multiple languages and code.</li>
+                        <li><strong>Training Data:</strong> Designed for high performance across tasks and languages.</li>
+                        <li><strong>Context Length:</strong> Up to 131,072 tokens.</li>
+                        <li><strong>Fine-Tuning:</strong> Architecture designed for broad applicability.</li>
+                    </ul>
+                </div>
+
+                <!-- Phi-3 Card -->
+                <div class="llm-card bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">Phi-3 (Microsoft)</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Model Sizes:</strong> Mini (3.8B), Small (7B), Medium (14B).</li>
+                        <li><strong>Architecture:</strong> Dense decoder-only Transformer (Vision for multimodal).</li>
+                        <li><strong>Tokenizer & Vocabulary:</strong> Llama 2 (Mini/Medium), Tiktoken (Small).</li>
+                        <li><strong>Training Data:</strong> 3.3T tokens (filtered web, educational, synthetic).</li>
+                        <li><strong>Context Length:</strong> 128,000 tokens (Mini), 8,000 tokens (Small).</li>
+                        <li><strong>Fine-Tuning:</strong> Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- New Section: Compare Models -->
+        <section id="compare-models" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Compare Large Language Models</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <p class="mb-6 text-center text-gray-700">Select up to three models below to compare their key features side-by-side.</p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+                    <select id="modelSelect1" class="block w-full md:w-1/3 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800">
+                        <option value="">-- Select Model 1 --</option>
+                    </select>
+                    <select id="modelSelect2" class="block w-full md:w-1/3 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800">
+                        <option value="">-- Select Model 2 --</option>
+                    </select>
+                    <select id="modelSelect3" class="block w-full md:w-1/3 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800">
+                        <option value="">-- Select Model 3 --</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button id="compareButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Compare Selected Models
+                    </button>
+                    <div id="errorMessage" class="text-red-600 mt-4 font-medium hidden">Please select at least two different models to compare.</div>
+                </div>
+
+                <div id="comparisonResults" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Comparison cards will be injected here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- Applications of LLMs Section -->
+        <section id="applications" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Applications of Large Language Models</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg leading-relaxed text-lg border border-gray-200">
+                <p class="mb-4">Large Language Models are revolutionizing various industries and aspects of daily life. Their ability to understand and generate human-like text makes them incredibly versatile. Here are some key applications:</p>
+                <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li><strong>Content Generation:</strong> From writing articles, marketing copy, and creative stories to generating code snippets and scripts, LLMs can produce high-quality text on demand.</li>
+                    <li><strong>Chatbots and Conversational AI:</strong> Powering advanced chatbots, virtual assistants, and customer service solutions that can engage in natural, context-aware conversations.</li>
+                    <li><strong>Summarization:</strong> Condensing long documents, articles, or reports into concise summaries, saving time and improving information retrieval.</li>
+                    <li><strong>Translation:</strong> Facilitating real-time translation across multiple languages, breaking down communication barriers.</li>
+                    <li><strong>Code Generation and Debugging:</strong> Assisting developers by generating code, suggesting improvements, identifying bugs, and explaining complex code structures.</li>
+                    <li><strong>Data Analysis and Insights:</strong> Processing and extracting insights from large datasets, identifying trends, and answering complex queries in natural language.</li>
+                    <li><strong>Education and Research:</strong> Acting as personalized tutors, providing explanations, generating practice questions, and assisting researchers in literature reviews and hypothesis generation.</li>
+                    <li><strong>Personal Assistants:</strong> Enhancing productivity by managing schedules, drafting emails, and providing quick information retrieval.</li>
+                </ul>
+                <p>As LLMs continue to evolve, their applications are expected to expand even further, driving innovation across countless domains.</p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- Recent Advancements Section -->
+        <section id="advancements" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Recent Advancements in LLMs</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg leading-relaxed text-lg border border-gray-200">
+                <p class="mb-4">The field of Large Language Models is one of the fastest-moving areas in AI. Recent advancements have focused on several key areas:</p>
+                <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li><strong>Multimodality:</strong> Newer LLMs are increasingly capable of processing and generating content across multiple modalities, including text, images, audio, and video, leading to richer and more comprehensive interactions.</li>
+                    <li><strong>Longer Context Windows:</strong> Significant increases in context length allow models to process and maintain coherence over extremely long documents, conversations, or codebases, enabling more complex reasoning and summarization tasks.</li>
+                    <li><strong>Mixture-of-Experts (MoE) Architectures:</strong> Adoption of MoE models allows for more efficient scaling, where different "expert" sub-networks are activated for different parts of the input, leading to better performance with reduced computational cost during inference.</li>
+                    <li><strong>Improved Safety and Alignment:</strong> Enhanced fine-tuning techniques like Reinforcement Learning from Human Feedback (RLHF) and Constitutional AI are making models safer, more helpful, and better aligned with human values.</li>
+                    <li><strong>Efficient Inference:</strong> Innovations in model architecture (e.g., Grouped Query Attention, Sliding Window Attention) and quantization techniques are making it possible to run larger models more efficiently on less powerful hardware, including edge devices.</li>
+                    <li><strong>Open-Source Ecosystem Growth:</strong> The increasing availability of powerful open-source LLMs (like Llama and Qwen series) is democratizing access to this technology, fostering rapid innovation and broader adoption.</li>
+                    <li><strong>Enhanced Reasoning Capabilities:</strong> Models are showing improved performance on complex reasoning, mathematical, and coding tasks, moving beyond simple pattern matching to more sophisticated problem-solving.</li>
+                </ul>
+                <p>These advancements are continually pushing the boundaries of what LLMs can achieve, promising even more powerful and integrated AI systems in the near future.</p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- Resources Section -->
+        <section id="resources" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Further Resources</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg leading-relaxed text-lg border border-gray-200">
+                <p class="mb-4">To deepen your understanding of Large Language Models, explore these valuable resources:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" class="text-blue-700 hover:underline">"Attention Is All You Need" (Transformer Paper)</a> - The foundational paper introducing the transformer architecture.</li>
+                    <li><a href="https://huggingface.co/docs/transformers/index" target="_blank" class="text-blue-700 hover:underline">Hugging Face Transformers Library</a> - A popular library for building and using transformer models.</li>
+                    <li><a href="https://openai.com/research/gpt-4" target="_blank" class="text-blue-700 hover:underline">OpenAI GPT-4 Technical Report</a> - Insights into GPT-4's capabilities and limitations.</li>
+                    <li><a href="https://www.deepmind.com/blog/gemini-1-5-pro-a-million-token-context-window-and-beyond" target="_blank" class="text-blue-700 hover:underline">Google DeepMind Gemini 1.5 Pro Blog</a> - Details on Gemini 1.5 Pro's long context window and MoE architecture.</li>
+                    <li><a href="https://ai.meta.com/blog/llama-3/" target="_blank" class="text-blue-700 hover:underline">Meta AI Llama 3 Blog</a> - Official announcement and details about Llama 3.</li>
+                    <li><a href="https://docs.anthropic.com/claude/docs/models-overview" target="_blank" class="text-blue-700 hover:underline">Anthropic Claude Models Overview</a> - Information on the Claude 3 family of models.</li>
+                    <li><a href="https://mistral.ai/news/mistral-large/" target="_blank" class="text-blue-700 hover:underline">Mistral AI Mistral Large Announcement</a> - Details on Mistral Large's features.</li>
+                    <li><a href="https://x.ai/grok/" target="_blank" class="text-blue-700 hover:underline">xAI Grok</a> - Information about Grok-1.</li>
+                    <li><a href="https://qwenlm.github.io/blog/qwen2/" target="_blank" class="text-blue-700 hover:underline">Qwen2 Official Blog</a> - Details on Qwen2 models.</li>
+                    <li><a href="https://www.microsoft.com/en-us/research/blog/phi-3-mini-a-new-era-of-small-language-models/" target="_blank" class="text-blue-700 hover:underline">Microsoft Phi-3 Blog</a> - Introduction to the Phi-3 family.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="container mx-auto px-4 my-8">
+            <hr class="border-t-2 border-gray-200 rounded-full">
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Contact</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-lg mx-auto border border-gray-200 text-center">
+                <p class="mb-6 text-gray-700">Connect with me on LinkedIn:</p>
+                <a href="https://www.linkedin.com/in/amithmg6/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit My LinkedIn Profile
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-16 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 The LLM Frontier. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with passion for AI enthusiasts.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Model data for comparison
+        const llmModels = [
+            {
+                name: "Llama 3 (Meta AI)",
+                features: [
+                    "Model Sizes: 1B, 8B, 70B parameters, with 3.1 introducing 405B.",
+                    "Architecture: Decoder-only transformer, optimized with Grouped Query Attention (GQA).",
+                    "Tokenizer & Vocabulary: New 128,256-token vocabulary (up from 32,000 in Llama 2).",
+                    "Training Data: Over 15 trillion tokens, 30+ languages, increased code data.",
+                    "Context Length: 8,192 tokens (8B/70B), up to 128,000 tokens (3.1 models).",
+                    "Fine-Tuning: Instruction-tuned with SFT and RLHF for dialogue and safety."
+                ]
+            },
+            {
+                name: "GPT-4 (OpenAI)",
+                features: [
+                    "Model Sizes: Estimated 1.75 trillion parameters (exact size undisclosed).",
+                    "Architecture: Multimodal transformer, accepts image and text inputs.",
+                    "Tokenizer & Vocabulary: Not detailed, robust across 26 languages.",
+                    "Training Data: Vast and diverse dataset, including text and image.",
+                    "Context Length: Up to 32,000 tokens (approx. 25,000 words).",
+                    "Fine-Tuning: Pre-trained with conversational styles, 'steerability' feature."
+                ]
+            },
+            {
+                name: "Claude 3 (Anthropic)",
+                features: [
+                    "Model Sizes: Opus, Sonnet, Haiku (specific counts not public).",
+                    "Architecture: Sparse transformer with reversible layers, multimodal.",
+                    "Tokenizer & Vocabulary: Proprietary; exact details not public.",
+                    "Training Data: Proprietary mix, unsupervised learning, RLHF, Constitutional AI.",
+                    "Context Length: 200,000 tokens (up to 1 million for specific use cases).",
+                    "Fine-Tuning: Curriculum learning, contrastive learning, controllable generation."
+                ]
+            },
+            {
+                name: "Gemini 1.5 (Google DeepMind)",
+                features: [
+                    "Model Sizes: Pro (implied trillions of parameters).",
+                    "Architecture: Sparse Mixture-of-Experts (MoE) multimodal.",
+                    "Tokenizer & Vocabulary: Processes text, image, video, audio, code as tokens.",
+                    "Training Data: Vast and diverse proprietary dataset.",
+                    "Context Length: Up to 1M tokens (production), 10M (research).",
+                    "Fine-Tuning: Sparsity for training efficiency, in-context memorization."
+                ]
+            },
+            {
+                name: "Mistral Large (Mistral AI)",
+                features: [
+                    "Model Sizes: Large model (exact count not officially disclosed).",
+                    "Architecture: Transformer with Sliding Window Attention (SWA) and Rolling Buffer Cache.",
+                    "Tokenizer & Vocabulary: Optimized for native multilingual proficiency.",
+                    "Training Data: Trained for complex multilingual reasoning.",
+                    "Context Length: 32,000 tokens.",
+                    "Fine-Tuning: Retrieval Augmented Generation (RAG), instruction-following, function-calling."
+                ]
+            },
+            {
+                name: "Falcon 180B (Technology Innovation Institute - TII)",
+                features: [
+                    "Model Sizes: 180 billion parameters.",
+                    "Architecture: Causal decoder-only transformer, optimized for multiquery attention.",
+                    "Tokenizer & Vocabulary: Not detailed.",
+                    "Training Data: 3.5 trillion tokens (RefinedWeb + curated corpora).",
+                    "Context Length: Designed for large-scale language understanding.",
+                    "Fine-Tuning: General-purpose model, fine-tunable for specific tasks."
+                ]
+            },
+            {
+                name: "Cohere Command R+ (Cohere)",
+                features: [
+                    "Model Sizes: 104 billion parameters.",
+                    "Architecture: Auto-regressive transformer.",
+                    "Tokenizer & Vocabulary: Optimized for 10 key languages.",
+                    "Training Data: Enterprise-focused for RAG and tool use.",
+                    "Context Length: 128,000 tokens.",
+                    "Fine-Tuning: SFT & preference training, tool use, grounded generation (RAG)."
+                ]
+            },
+            {
+                name: "Grok-1 (xAI)",
+                features: [
+                    "Model Sizes: 314 billion parameters (Mixture-of-Experts).",
+                    "Architecture: Mixture-of-Experts (MoE) transformer.",
+                    "Tokenizer & Vocabulary: Not detailed.",
+                    "Training Data: Internet data + real-time X (Twitter) information.",
+                    "Context Length: Handles complex context.",
+                    "Fine-Tuning: Leverages Zero-Shot, Few-Shot, Chain-of-Thought prompting."
+                ]
+            },
+            {
+                name: "Qwen2 (Alibaba Cloud)",
+                features: [
+                    "Model Sizes: 0.5B, 1.5B, 7B, 57B (MoE), 72B parameters.",
+                    "Architecture: Transformer with GQA, RoPE, sliding window/full attention, YARN.",
+                    "Tokenizer & Vocabulary: Adaptive for multiple languages and code.",
+                    "Training Data: Designed for high performance across tasks and languages.",
+                    "Context Length: Up to 131,072 tokens.",
+                    "Fine-Tuning: Architecture designed for broad applicability."
+                ]
+            },
+            {
+                name: "Phi-3 (Microsoft)",
+                features: [
+                    "Model Sizes: Mini (3.8B), Small (7B), Medium (14B).",
+                    "Architecture: Dense decoder-only Transformer (Vision for multimodal).",
+                    "Tokenizer & Vocabulary: Llama 2 (Mini/Medium), Tiktoken (Small).",
+                    "Training Data: 3.3T tokens (filtered web, educational, synthetic).",
+                    "Context Length: 128,000 tokens (Mini), 8,000 tokens (Small).",
+                    "Fine-Tuning: Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO)."
+                ]
+            }
+        ];
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active navigation link based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Check if the link's href matches the current section's ID
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initial check for active link on page load
+        window.dispatchEvent(new Event('scroll'));
+
+        // --- Model Comparison Logic ---
+        const modelSelect1 = document.getElementById('modelSelect1');
+        const modelSelect2 = document.getElementById('modelSelect2');
+        const modelSelect3 = document.getElementById('modelSelect3');
+        const compareButton = document.getElementById('compareButton');
+        const comparisonResults = document.getElementById('comparisonResults');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Populate dropdowns
+        function populateModelSelects() {
+            llmModels.forEach(model => {
+                const option1 = document.createElement('option');
+                option1.value = model.name;
+                option1.textContent = model.name;
+                modelSelect1.appendChild(option1);
+
+                const option2 = document.createElement('option');
+                option2.value = model.name;
+                option2.textContent = model.name;
+                modelSelect2.appendChild(option2);
+
+                const option3 = document.createElement('option');
+                option3.value = model.name;
+                option3.textContent = model.name;
+                modelSelect3.appendChild(option3);
+            });
+        }
+
+        // Generate comparison cards
+        function generateComparisonCards(selectedModels) {
+            comparisonResults.innerHTML = ''; // Clear previous results
+            if (selectedModels.length === 0) {
+                comparisonResults.innerHTML = '<p class="text-center text-gray-600">No models selected for comparison.</p>';
+                return;
+            }
+
+            selectedModels.forEach(modelName => {
+                const model = llmModels.find(m => m.name === modelName);
+                if (model) {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white p-6 rounded-xl shadow-lg border border-gray-200';
+                    let featuresHtml = model.features.map(feature => `<li>${feature}</li>`).join('');
+                    card.innerHTML = `
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-4">${model.name}</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            ${featuresHtml}
+                        </ul>
+                    `;
+                    comparisonResults.appendChild(card);
+                }
+            });
+        }
+
+        // Event listener for compare button
+        compareButton.addEventListener('click', () => {
+            const selectedModelNames = [
+                modelSelect1.value,
+                modelSelect2.value,
+                modelSelect3.value
+            ].filter(name => name !== ''); // Filter out empty selections
+
+            // Remove duplicates
+            const uniqueSelectedModels = [...new Set(selectedModelNames)];
+
+            if (uniqueSelectedModels.length < 2) {
+                errorMessage.classList.remove('hidden');
+                comparisonResults.innerHTML = ''; // Clear results if not enough models
+            } else {
+                errorMessage.classList.add('hidden');
+                generateComparisonCards(uniqueSelectedModels);
+            }
+        });
+
+        // Initialize dropdowns on page load
+        populateModelSelects();
+    </script>
+</body>
+</html>
